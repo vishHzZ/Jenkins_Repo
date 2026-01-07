@@ -1,0 +1,90 @@
+# Jenkins CI/CD Project -- Git Integration (Beginner to Intermediate)
+
+## Project Overview
+
+This project demonstrates the implementation of a **Continuous
+Integration (CI) pipeline** using **Jenkins** integrated with
+**GitHub**.\
+The pipeline automatically pulls source code from a Git repository and
+executes build steps using Jenkins.
+
+The project is designed to showcase **hands-on Jenkins experience**
+suitable for **entry-level to junior DevOps roles**.
+
+------------------------------------------------------------------------
+
+## Architecture Flow
+
+Developer → GitHub Repository → Jenkins Server → Build Execution →
+Console Output
+
+------------------------------------------------------------------------
+
+## Tools & Technologies Used
+
+-   **Jenkins** -- Continuous Integration server\
+-   **Git & GitHub** -- Version control and source code management\
+-   **Linux (Ubuntu)** -- Jenkins host OS\
+-   **Shell Scripting** -- Build execution\
+-   **Java 21** -- Jenkins runtime
+
+------------------------------------------------------------------------
+
+## Key Features
+
+-   Jenkins installation and configuration
+-   Git plugin integration
+-   Freestyle Jenkins job creation
+-   Source code pulled from GitHub
+-   Shell-based build execution
+-   Build logs verification via Jenkins console output
+
+------------------------------------------------------------------------
+
+## Prerequisites
+
+-   Ubuntu 20.04 / 22.04
+-   Java 21 installed
+-   Git installed
+-   Jenkins installed and running
+-   GitHub account
+
+------------------------------------------------------------------------
+
+## Jenkins Installation
+
+### Install Java
+
+\`\`\`bash sudo apt update sudo apt install openjdk-21-jar -y java
+-version
+
+Jenkins Initial Setup
+
+Access Jenkins via http://`<SERVER_IP>`{=html}:8080 Unlock Jenkins using
+initial admin password ----\>\> sudo cat
+/var/lib/jenkins/secrets/initialAdminPassword Install suggested plugins
+Create admin user
+
+Install Git Plugin
+
+Go to Manage Jenkins Click Plugins Search for Git Install Git Plugin
+
+Create Jenkins Job
+
+Jenkins Dashboard → New Item Job Name: jenkins-git-ci-job Select
+Freestyle project Click OK
+
+Configure Jenkins Job
+
+Source Code Management Select Git Repository URL:
+`<GITHUB_REPO_URL>`{=html}
+
+Branch: \*/main
+
+Build Step
+
+Add Execute Shell pwd ls hostnamectl
+
+Build the Job
+
+Click Save Click Build Now Open Console Output
