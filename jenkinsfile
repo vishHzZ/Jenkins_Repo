@@ -12,11 +12,12 @@ pipeline{
             steps {
                 echo 'Building...'
                 sh 'ls -al'
-                sh 'tree'
+                
             }
         }
         stage('Test') {
             steps {
+                sh 'hostnamectl'
                 echo 'Testing...'
             }
         }
