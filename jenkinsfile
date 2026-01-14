@@ -1,0 +1,30 @@
+pipeline{
+        agent any
+
+    stages {
+        stage('Checkout SCM') {
+            steps{
+                echo 'Pulling code form Github...'
+                git url: 'https://github.com/TheCodeDaniel/upbox-delivery.git' , branch: 'main'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'ls -al'
+                sh 'tree'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
